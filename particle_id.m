@@ -7,9 +7,9 @@ close all
 
 load('Epoch3_STT3_flux01.mat','T_g','T_l','bad_frame','ind_start','ind_end');
 load time_series.mat
-load('/Users/yxs/Documents/Research/Marine Snow Camera/GelCam/Datasets/EXPORTS 2018 (updated)/Epoch3_103_STT3/PIV/PIVlab_results.mat')
-static_mask = imread('/Users/yxs/Documents/Research/Marine Snow Camera/GelCam/Datasets/EXPORTS 2018 (updated)/Epoch3_103_STT3/static_mask_Epoch3_STT3.png');
-test_dir = '/Users/yxs/Documents/Research/Marine Snow Camera/GelCam/Datasets/EXPORTS 2018 (updated)/Epoch3_103_STT3';
+load('PIVlab_results.mat')
+static_mask = imread('static_mask_Epoch3_STT3.png');
+test_dir = 'Epoch3_103_STT3';
 
 frameNumbers = ind_start:ind_end;
 frameNumbers(ismember(frameNumbers, bad_frame)) = [];
@@ -17,13 +17,13 @@ frames = length(frameNumbers);
 draw_boundary = 0;
 %% obtain particle stats
 imageCell = cell(1, frames);
-imagePath = sprintf("/Users/yxs/Documents/Research/Marine Snow Camera/GelCam/Datasets/EXPORTS 2018 (updated)/Epoch3_103_STT3/bgrem/bgrem_%05d.png", frameNumbers(1));
+imagePath = sprintf("bgrem/bgrem_%05d.png", frameNumbers(1));
 image = imread(imagePath);
 [im_h,im_w] = size(image);
 
 for i = 1:frames
     frameNumber = frameNumbers(i);
-    imagePath = sprintf("/Users/yxs/Documents/Research/Marine Snow Camera/GelCam/Datasets/EXPORTS 2018 (updated)/Epoch3_103_STT3/bgrem/bgrem_%05d.png", frameNumber);
+    imagePath = sprintf("bgrem/bgrem_%05d.png", frameNumber);
     image = imread(imagePath);
     imageCell{1, i} = image;
     bwImage = imbinarize(image, T_g);
