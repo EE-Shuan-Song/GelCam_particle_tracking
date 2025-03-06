@@ -1,9 +1,6 @@
 clear
 close all
 
-% generate the time series
-
-
 read_dir = fullfile(pwd,'pics/raw');
 list = dir(fullfile(read_dir,'*.jpg'));
 
