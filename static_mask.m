@@ -1,9 +1,6 @@
 clear
 close all
 
-% start at #38
-% finish at #482 or #483
-
 dir = fullfile(pwd,'pics/raw/Fri_Aug_31_16-52-42_2018.jpg');
 dir_test = fullfile(pwd,'pics/raw/Wed_Sep__5_00-37-51_2018.jpg');
 
@@ -106,9 +103,6 @@ if bar_exist == 1
 
 end
 
-
-
-
 figure;
 subplot(2,3,1)
 imshow(im_bw0);
@@ -125,9 +119,5 @@ end
 
 im_masked = uint8(double(im_test).*(~im_bw4));
 
-
-
 figure('name','mask performance');
 imshowpair(im_test,im_masked,'montage')
-
-% imwrite(~im_bw4, 'static_mask_Epoch1_STT1.png')
