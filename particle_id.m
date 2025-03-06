@@ -1,10 +1,6 @@
 clear
 close all
 
-% test particle tracking
-% + aggregation
-% + fragmentation
-
 load('Epoch3_STT3_flux01.mat','T_g','T_l','bad_frame','ind_start','ind_end');
 load time_series.mat
 load('PIVlab_results.mat')
