@@ -7,8 +7,6 @@ close all
 % 3. background removal after svd
 % 4. applying dyanmic masks (if needed)
 
-% the test on Epoch1_STT1 works great! only takes few minutes
-
 %% initialization
 load time_series.mat
 read_dir = list(1).folder;
@@ -37,8 +35,6 @@ for i = ind_start:ind_int1
     end
 end
 M1 = zeros(N_img1,H*W,'single');
-
-
 
 
 m = 1;
